@@ -29,51 +29,61 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">git</a></li></ul></nav></div></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2024/09/12/Git%E5%AD%A6%E4%B9%A0/"><img class="fill" src="/gallary/cover/cover_git.png" alt="Git学习"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-12T07:52:08.000Z" title="2024/9/12 15:52:08">2024-09-12</time>发表</span><span class="level-item"><time dateTime="2024-09-13T14:46:34.290Z" title="2024/9/13 22:46:34">2024-09-13</time>更新</span><span class="level-item">4 分钟读完 (大约637个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/09/12/Git%E5%AD%A6%E4%B9%A0/">Git学习</a></p><div class="content"><h2 id="1-创建版本库"><a href="#1-创建版本库" class="headerlink" title="1. 创建版本库"></a>1. 创建版本库</h2><ul>
-<li><strong>在本地新建一个文件夹，并通过</strong> <code>git init</code>命令把这个文件夹变为仓库</li>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">git</a></li></ul></nav></div></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2024/09/12/Git%E5%AD%A6%E4%B9%A0/"><img class="fill" src="/gallary/cover/cover_git.png" alt="Git学习"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-12T07:52:08.000Z" title="2024/9/12 15:52:08">2024-09-12</time>发表</span><span class="level-item"><time dateTime="2024-09-14T12:39:20.993Z" title="2024/9/14 20:39:20">2024-09-14</time>更新</span><span class="level-item">4 分钟读完 (大约666个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/09/12/Git%E5%AD%A6%E4%B9%A0/">Git学习</a></p><div class="content"><h2 id="1-创建版本库"><a href="#1-创建版本库" class="headerlink" title="1. 创建版本库"></a>1. 创建版本库</h2><ul>
+<li>在本地新建一个文件夹，编写好程序后通过 <code>git init</code>命令把这个文件夹变为仓库</li>
+<li>使用<code>git remote add origin &lt;url&gt;</code>，将本地仓库与远程仓库关联</li>
 </ul>
 <h2 id="2-提交文件"><a href="#2-提交文件" class="headerlink" title="2. 提交文件"></a>2. 提交文件</h2><ul>
-<li><p><strong>举例来说，新建一个</strong> <code>readme.md</code>文件后，在命令行输入以下命令，将文件添加至仓库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   $ git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>若文件进行了修改，也一样需要进行</strong> <code>add</code>操作</p>
-</li>
-<li><p><strong>用以下命令，将文件提交至仓库</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   $ git commit -m &quot;message&quot;</span><br></pre></td></tr></table></figure>
-
-<p><code>-m</code>后面的字符串为对此次提交进行的注释</p>
-</li>
-<li><p><strong>我们可以多次进行</strong> <code>add</code>操作，之后统一进行一次 <code>commit</code></p>
-</li>
+<li>举例来说，新建一个 <code>readme.md</code>文件后，在命令行输入以下命令，将文件添加至暂存区（stage）</li>
 </ul>
-<h2 id="3-版本回退"><a href="#3-版本回退" class="headerlink" title="3. 版本回退"></a>3. 版本回退</h2><h3 id="3-1-查看提交日志"><a href="#3-1-查看提交日志" class="headerlink" title="3.1 查看提交日志"></a>3.1 查看提交日志</h3>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   $ git log</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>  若文件进行了修改，也一样需要进行 <code>add</code>操作</p>
+<ul>
+<li>用以下命令，将文件提交至仓库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git commit -m <span class="string">&quot;message&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>  <code>-m</code>后面的字符串为对此次提交进行的注释</p>
+<ul>
+<li>我们可以多次进行 <code>add</code>操作，之后统一进行一次 <code>commit</code></li>
+</ul>
+<h2 id="3-版本回退"><a href="#3-版本回退" class="headerlink" title="3. 版本回退"></a>3. 版本回退</h2><h3 id="3-1-查看提交日志"><a href="#3-1-查看提交日志" class="headerlink" title="3.1 查看提交日志"></a>3.1 查看提交日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p><strong>通过该语句，我们可以由近至远，查看提交的历史记录与注释</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   commit 5873a0c813b8b78352d60f4cdb520b7d8024e5df (HEAD -&gt; master)</span><br><span class="line">   Author: owpeter &lt;pt909795@163.com&gt;</span><br><span class="line">   Date:   Thu Sep 5 19:11:22 2024 +0800</span><br><span class="line">   </span><br><span class="line">       second commit test</span><br><span class="line">   </span><br><span class="line">   commit ff0ba3b4c017598616e5dd9204406cf8a2860ebf</span><br><span class="line">   Author: owpeter &lt;pt909795@163.com&gt;</span><br><span class="line">   Date:   Thu Sep 5 19:09:54 2024 +0800</span><br><span class="line">   </span><br><span class="line">       first commit</span><br><span class="line">   </span><br></pre></td></tr></table></figure></li>
+<li><strong>通过该语句，我们可以由近至远，查看提交的历史记录与注释</strong></li>
 </ul>
-<h3 id="3-2-版本回退"><a href="#3-2-版本回退" class="headerlink" title="3.2 版本回退"></a>3.2 版本回退</h3><ul>
-<li><p><strong>在Git中，当前版本表示为</strong> <code>HEAD</code>，前一个版本为 <code>HEAD^</code>，上上个版本为 <code>HEAD^^</code>，前n个版本表示为 <code>HEAD~n</code></p>
-</li>
-<li><p><strong>接下来，使用以下命令进行版本回退：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   $ git reset &lt;option&gt; &lt;version&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> commit 5873a0c813b8b78352d60f4cdb520b7d8024e5df (HEAD -&gt; master)</span><br><span class="line"> Author: owpeter &lt;pt909795@163.com&gt;</span><br><span class="line"> Date:   Thu Sep 5 19:11:22 2024 +0800</span><br><span class="line"> </span><br><span class="line">     second commit <span class="built_in">test</span></span><br><span class="line"> </span><br><span class="line"> commit ff0ba3b4c017598616e5dd9204406cf8a2860ebf</span><br><span class="line"> Author: owpeter &lt;pt909795@163.com&gt;</span><br><span class="line"> Date:   Thu Sep 5 19:09:54 2024 +0800</span><br><span class="line"> </span><br><span class="line">     first commit</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
 
-<p><strong>其中option有三种：</strong></p>
+<h3 id="3-2-版本回退"><a href="#3-2-版本回退" class="headerlink" title="3.2 版本回退"></a>3.2 版本回退</h3><ul>
+<li><strong>在Git中，当前版本表示为</strong> <code>HEAD</code>，前一个版本为 <code>HEAD^</code>，上上个版本为 <code>HEAD^^</code>，前n个版本表示为 <code>HEAD~n</code></li>
+<li><strong>接下来，使用以下命令进行版本回退：</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git reset &lt;option&gt; &lt;version&gt;</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>其中option有三种：</strong></p>
 <ul>
 <li><code>--hard</code>回退到上个版本的已提交状态</li>
 <li><code>--soft</code>回退到上个版本的未提交状态</li>
 <li><code>--mixed</code>回退到上个版本的已添加但未提交状态</li>
 </ul>
-<p><strong>version可以进行要回退的版本</strong></p>
-</li>
+<p>  <strong>version可以进行要回退的版本</strong></p>
+<ul>
 <li><p><strong>加入回退错了版本，如何回到未回退状态呢？</strong></p>
 <ul>
 <li><strong>首先，我们需要知道以前commit的版本号。通过</strong> <code>git log -pretty=oneline</code>查看每次的版本号。</li>
-<li><strong>将</strong> <code>head</code>指针移动至为回退时 <code>commit</code>的版本<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">     $ git reset --hard xxxx</span><br></pre></td></tr></table></figure></li>
-<li><strong>忘记录版本号了怎么办？ 输入</strong> <code>git reflog</code>查看每一次操作的id<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">     $ git reflog</span><br><span class="line">     ff0ba3b (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to HEAD^</span><br><span class="line">     5873a0c HEAD@&#123;1&#125;: commit: second commit test</span><br><span class="line">     ff0ba3b (HEAD -&gt; master) HEAD@&#123;2&#125;: commit (initial): first commit</span><br></pre></td></tr></table></figure></li>
+<li><strong>将</strong> <code>head</code>指针移动至为回退时 <code>commit</code>的版本</li>
+<li></li>
 </ul>
 </li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git reset --hard xxxx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>忘记录版本号了怎么办？ 输入</strong> <code>git reflog</code>查看每一次操作的id</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> $ git reflog</span><br><span class="line"> ff0ba3b (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to HEAD^</span><br><span class="line"> 5873a0c HEAD@&#123;1&#125;: commit: second commit <span class="built_in">test</span></span><br><span class="line"> ff0ba3b (HEAD -&gt; master) HEAD@&#123;2&#125;: commit (initial): first commit</span><br></pre></td></tr></table></figure>
+
 <h3 id="3-3-撤销修改"><a href="#3-3-撤销修改" class="headerlink" title="3.3 撤销修改"></a>3.3 撤销修改</h3><ul>
 <li><strong>使用</strong> <code>git checkout -- &lt;file&gt;</code>命令，将文件在<strong>工作区</strong>进行的修改全部撤回<br><strong>这里有两种情况：</strong><ul>
 <li><strong>一种是</strong> <code>&lt;file&gt;</code>自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</li>
