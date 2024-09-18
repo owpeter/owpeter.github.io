@@ -29,18 +29,41 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">git</a></li></ul></nav></div></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2024/09/12/Git%E5%AD%A6%E4%B9%A0/"><img class="fill" src="/gallary/cover/cover_git.png" alt="Git学习"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-12T07:52:08.000Z" title="2024/9/12 15:52:08">2024-09-12</time>发表</span><span class="level-item"><time dateTime="2024-09-14T12:39:20.993Z" title="2024/9/14 20:39:20">2024-09-14</time>更新</span><span class="level-item">4 分钟读完 (大约666个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/09/12/Git%E5%AD%A6%E4%B9%A0/">Git学习</a></p><div class="content"><h2 id="1-创建版本库"><a href="#1-创建版本库" class="headerlink" title="1. 创建版本库"></a>1. 创建版本库</h2><ul>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">git</a></li></ul></nav></div></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2024/09/12/Git%E5%AD%A6%E4%B9%A0/"><img class="fill" src="/gallary/cover/cover_git.png" alt="Git学习"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-12T07:52:08.000Z" title="2024/9/12 15:52:08">2024-09-12</time>发表</span><span class="level-item"><time dateTime="2024-09-17T15:36:11.308Z" title="2024/9/17 23:36:11">2024-09-17</time>更新</span><span class="level-item">7 分钟读完 (大约981个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/09/12/Git%E5%AD%A6%E4%B9%A0/">Git学习</a></p><div class="content"><h2 id="1-获取Git仓库"><a href="#1-获取Git仓库" class="headerlink" title="1. 获取Git仓库"></a>1. 获取Git仓库</h2><h3 id="创建版本仓库"><a href="#创建版本仓库" class="headerlink" title="创建版本仓库"></a>创建版本仓库</h3><ul>
 <li>在本地新建一个文件夹，编写好程序后通过 <code>git init</code>命令把这个文件夹变为仓库</li>
 <li>使用<code>git remote add origin &lt;url&gt;</code>，将本地仓库与远程仓库关联</li>
 </ul>
-<h2 id="2-提交文件"><a href="#2-提交文件" class="headerlink" title="2. 提交文件"></a>2. 提交文件</h2><ul>
+<h3 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h3><ul>
+<li>使用<code>git clone</code>命令来克隆仓库中几乎全部数据。</li>
+<li>命令的格式为<code>git clone [url]</code></li>
+</ul>
+<h3 id="文件状态分类"><a href="#文件状态分类" class="headerlink" title="文件状态分类"></a>文件状态分类</h3><ul>
+<li><code>Tracked</code>:<ul>
+<li><code>Unmodified</code>: 上次<code>commit</code>后没有修改过的文件</li>
+<li><code>Modified</code>: 上次<code>commit</code>后修改过的文件</li>
+<li><code>Staged</code>: 修改后放入暂存区的文件</li>
+</ul>
+</li>
+<li><code>Untracked</code>: 其他文件，可能是上次<code>commit</code>后新建的文件</li>
+</ul>
+<p><img src="/%5Cgallary%5Cfile%5CGit%5Cp1.png" alt="p1"></p>
+<ul>
+<li>检查当前文件状态：用<code>git status</code>命令。<ul>
+<li>所有文件都被<code>tracked</code>:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br></pre></td></tr></table></figure></li>
+<li>有未<code>commit</code>文件：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line">        new file:   new.txt</span><br></pre></td></tr></table></figure></li>
+<li>有<code>untracked</code>文件：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="keyword">in</span> what will be committed)</span><br><span class="line"></span><br><span class="line">    README</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use <span class="string">&quot;git add&quot;</span> to track)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="跟踪新文件"><a href="#跟踪新文件" class="headerlink" title="跟踪新文件"></a>跟踪新文件</h3><p>使用<code>git add &lt;file_name&gt;</code>开始跟踪一个文件</p>
+<ul>
 <li>举例来说，新建一个 <code>readme.md</code>文件后，在命令行输入以下命令，将文件添加至暂存区（stage）</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git add &lt;file&gt;</span><br></pre></td></tr></table></figure>
 
 <p>  若文件进行了修改，也一样需要进行 <code>add</code>操作</p>
 <ul>
-<li>用以下命令，将文件提交至仓库</li>
+<li>用以下命令，将文件提交至仓库。建议每次提交前，先用<code>git status</code>查看是否所以文件都已经<code>staged</code></li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git commit -m <span class="string">&quot;message&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -48,7 +71,11 @@
 <ul>
 <li>我们可以多次进行 <code>add</code>操作，之后统一进行一次 <code>commit</code></li>
 </ul>
-<h2 id="3-版本回退"><a href="#3-版本回退" class="headerlink" title="3. 版本回退"></a>3. 版本回退</h2><h3 id="3-1-查看提交日志"><a href="#3-1-查看提交日志" class="headerlink" title="3.1 查看提交日志"></a>3.1 查看提交日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h3 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h3><ul>
+<li>将文件从工作区删除：在本地手动删除后使用<code>git rm</code>命令，将文件从暂存区移除，这样下一次</li>
+<li>将文件从Git仓库中删除：使用<code>--cached</code>选项<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">rm</span> --cached xxx</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h3><h2 id="3-版本回退"><a href="#3-版本回退" class="headerlink" title="3. 版本回退"></a>3. 版本回退</h2><h3 id="3-1-查看提交日志"><a href="#3-1-查看提交日志" class="headerlink" title="3.1 查看提交日志"></a>3.1 查看提交日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><strong>通过该语句，我们可以由近至远，查看提交的历史记录与注释</strong></li>
