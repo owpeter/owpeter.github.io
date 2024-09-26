@@ -33,7 +33,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">CO</a></li></ul></nav></div></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2024/09/24/CO-p0/"><img class="fill" src="/gallary/cover/test.webp" alt="BUAA_CO_P0_课下"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-24T08:42:22.000Z" title="2024/9/24 16:42:22">2024-09-24</time>发表</span><span class="level-item"><time dateTime="2024-09-24T09:56:38.238Z" title="2024/9/24 17:56:38">2024-09-24</time>更新</span><span class="level-item">6 分钟读完 (大约882个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/09/24/CO-p0/">BUAA_CO_P0_课下</a></p><div class="content"><h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><blockquote>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">CO</a></li></ul></nav></div></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2024/09/24/CO-p0/"><img class="fill" src="/gallary/cover/cover_CO_p0_before.webp" alt="BUAA_CO_P0_课下"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-24T08:42:22.000Z" title="2024/9/24 16:42:22">2024-09-24</time>发表</span><span class="level-item"><time dateTime="2024-09-26T02:10:49.825Z" title="2024/9/26 10:10:49">2024-09-26</time>更新</span><span class="level-item">6 分钟读完 (大约896个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/09/24/CO-p0/">BUAA_CO_P0_课下</a></p><div class="content"><h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><blockquote>
 <p>匹配规则：</p>
 <ul>
 <li>[…]是指要匹配中括号中的字符(注意是字符不是字符串),比如[xyz]就是要匹配x y z这三个字符中的任意一个。</li>
@@ -71,7 +71,43 @@
 <p>如果是Moore机，那么会有4个状态，其中最后一个状态是用来判断是否输出的，但Mealy机3个状态即可，输出时通过判断“是否处于最后状态”<code>&amp;&amp;</code>“输入是否合理”，决定输出内容。</p>
 <p>到此，思路清晰，只剩打表了</p>
 <p><img src="/gallary/file/CO_P0_before/1.png" alt="正则表达式匹配"></p>
-<p><img src="/gallary/file/CO_P0_before/2.jpg" alt="状态转移图"></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <svg width="600" height="450" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+        <ellipse stroke="black" stroke-width="1" fill="none" cx="570.5" cy="210.5" rx="30" ry="30"/>
+    <text x="560.5" y="216.5" font-family="Times New Roman" font-size="20">S1</text>
+    <ellipse stroke="black" stroke-width="1" fill="none" cx="210.5" cy="210.5" rx="30" ry="30"/>
+    <text x="200.5" y="216.5" font-family="Times New Roman" font-size="20">S0</text>
+    <ellipse stroke="black" stroke-width="1" fill="none" cx="390.5" cy="480.5" rx="30" ry="30"/>
+    <text x="380.5" y="486.5" font-family="Times New Roman" font-size="20">S2</text>
+    <path stroke="black" stroke-width="1" fill="none" d="M 197.275,183.703 A 22.5,22.5 0 1 1 223.725,183.703"/>
+    <text x="130.5" y="134.5" font-family="Times New Roman" font-size="20">input a\c\others</text>
+    <polygon fill="black" stroke-width="1" points="223.725,183.703 232.473,180.17 224.382,174.292"/>
+    <path stroke="black" stroke-width="1" fill="none" d="M 239.634,203.354 A 694.593,694.593 0 0 1 541.366,203.354"/>
+    <polygon fill="black" stroke-width="1" points="541.366,203.354 534.643,196.735 532.471,206.497"/>
+    <text x="355.5" y="177.5" font-family="Times New Roman" font-size="20">input b</text>
+    <path stroke="black" stroke-width="1" fill="none" d="M 561.71,239.179 A 516.351,516.351 0 0 1 413.592,461.356"/>
+    <polygon fill="black" stroke-width="1" points="413.592,461.356 422.901,459.828 416.298,452.318"/>
+    <text x="508.5" y="379.5" font-family="Times New Roman" font-size="20">input a\c</text>
+    <path stroke="black" stroke-width="1" fill="none" d="M 401.006,452.403 A 647.317,647.317 0 0 1 548.605,231.005"/>
+    <polygon fill="black" stroke-width="1" points="548.605,231.005 539.392,233.038 546.395,240.176"/>
+    <text x="387.5" y="326.5" font-family="Times New Roman" font-size="20">input b</text>
+    <path stroke="black" stroke-width="1" fill="none" d="M 597.297,197.275 A 22.5,22.5 0 1 1 597.297,223.725"/>
+    <text x="643.5" y="216.5" font-family="Times New Roman" font-size="20">input b</text>
+    <polygon fill="black" stroke-width="1" points="597.297,223.725 600.83,232.473 606.708,224.382"/>
+    <path stroke="black" stroke-width="1" fill="none" d="M 367.177,461.638 A 496.379,496.379 0 0 1 218.94,239.283"/>
+    <polygon fill="black" stroke-width="1" points="218.94,239.283 216.669,248.44 226.175,245.337"/>
+    <text x="111.5" y="379.5" font-family="Times New Roman" font-size="20">input a\c\others</text>
+    <path stroke="black" stroke-width="1" fill="none" d="M 540.976,215.815 A 932.783,932.783 0 0 1 240.024,215.815"/>
+    <polygon fill="black" stroke-width="1" points="240.024,215.815 247.113,222.04 248.726,212.171"/>
+    <text x="360.5" y="249.5" font-family="Times New Roman" font-size="20">others</text>
+    </svg>
+    <h3 style="margin-top: 3px;">状态转移</h3>
+</div>
+
+
+
+
+
 <h1 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h1><blockquote>
 <p>向4个方向走一格，若撞墙，则保持原地，且将<code>hit</code>置高一周期，不撞墙则继续走；若到达B点，<code>arrive</code>置高一周期，并在下一周期返回A</p>
 <table>
