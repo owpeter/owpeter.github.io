@@ -29,7 +29,8 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%912024-10-16%2010_05_06.png" alt="BUAA-CO-P0-HW"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-24T08:42:22.000Z" title="2024/9/24 16:42:22">2024-09-24</time>发表</span><span class="level-item"><time dateTime="2024-10-16T02:05:54.583Z" title="2024/10/16 10:05:54">2024-10-16</time>更新</span><span class="level-item">7 分钟读完 (大约997个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">BUAA-CO-P0-HW</h1><div class="content"><h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><blockquote>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%912024-10-16%2010_05_06.png" alt="BUAA-CO-P0-HW"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-24T08:42:22.000Z" title="2024/9/24 16:42:22">2024-09-24</time>发表</span><span class="level-item"><time dateTime="2024-10-16T02:05:54.583Z" title="2024/10/16 10:05:54">2024-10-16</time>更新</span><span class="level-item">7 分钟读完 (大约997个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">BUAA-CO-P0-HW</h1><div class="content"><h1 id="正则表达式匹配"><a class="markdownIt-Anchor" href="#正则表达式匹配"></a> 正则表达式匹配</h1>
+<blockquote>
 <p>匹配规则：</p>
 <ul>
 <li>[…]是指要匹配中括号中的字符(注意是字符不是字符串),比如[xyz]就是要匹配x y z这三个字符中的任意一个。</li>
@@ -37,116 +38,118 @@
 </ul>
 </blockquote>
 <!-- more -->
-
 <blockquote>
 <p>本题要求使用Mealy状态机匹配<code>b&#123;1,2&#125;[ac]&#123;2&#125;</code>的子串并输出。为简化电路，我们用<code>00</code>表示<code>a</code>，<code>01</code>表示<code>b</code>，<code>10</code>表示<code>c</code>，<code>11</code>表示其他字符</p>
 <table>
 <thead>
 <tr>
-<th align="left">信号名</th>
-<th align="left">方向</th>
-<th align="left">描述</th>
+<th style="text-align:left">信号名</th>
+<th style="text-align:left">方向</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">In[1:0]</td>
-<td align="left">I</td>
-<td align="left">串行方式输入字符串。</td>
+<tbody>
+<tr>
+<td style="text-align:left">In[1:0]</td>
+<td style="text-align:left">I</td>
+<td style="text-align:left">串行方式输入字符串。</td>
 </tr>
 <tr>
-<td align="left">CLR</td>
-<td align="left">I</td>
-<td align="left">清除置位信号（同步复位）</td>
+<td style="text-align:left">CLR</td>
+<td style="text-align:left">I</td>
+<td style="text-align:left">清除置位信号（同步复位）</td>
 </tr>
 <tr>
-<td align="left">Z</td>
-<td align="left">O</td>
-<td align="left">输出是否检测到了与表达式匹配的子串</td>
+<td style="text-align:left">Z</td>
+<td style="text-align:left">O</td>
+<td style="text-align:left">输出是否检测到了与表达式匹配的子串</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </blockquote>
 <p>首先状态机类型不能搞错了，搞错了是万万不可能过的。本题要求Mealy机，即输入与输出有关。这就确定了转移块有2个输入口一个输出口，输出块也有2个输入口一个输出口</p>
 <p>如果是Moore机，那么会有4个状态，其中最后一个状态是用来判断是否输出的，但Mealy机3个状态即可，输出时通过判断“是否处于最后状态”<code>&amp;&amp;</code>“输入是否合理”，决定输出内容。</p>
-<p>另外，虽然Mealy机的输出序列与Moore机相同，<strong>但Mealy机在输出时间上比Moore机快了一个周期。</strong>如果发现评测机返回的结果让你疑惑“这个时候怎么会有输出”，那么可能是<strong>状态机类型搞错了</strong>导致输出错位了一个周期</p>
+<p>另外，虽然Mealy机的输出序列与Moore机相同，<strong>但Mealy机在输出时间上比Moore机快了一个周期。<strong>如果发现评测机返回的结果让你疑惑“这个时候怎么会有输出”，那么可能是</strong>状态机类型搞错了</strong>导致输出错位了一个周期</p>
 <p>到此，思路清晰，只剩打表了</p>
-<p><img src="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/1.png" alt="正则表达式匹配"></p>
+<p><img src="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/1.png" alt="正则表达式匹配" /></p>
 <div style="display: flex; flex-direction: column; align-items: center;">
     <svg width="600" height="450" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-    <ellipse stroke="black" stroke-width="1" fill="none" cx="570.5" cy="210.5" rx="30" ry="30"/>
-    <text x="560.5" y="216.5" font-family="Times New Roman" font-size="20">S1</text>
-    <ellipse stroke="black" stroke-width="1" fill="none" cx="210.5" cy="210.5" rx="30" ry="30"/>
-    <text x="200.5" y="216.5" font-family="Times New Roman" font-size="20">S0</text>
-    <ellipse stroke="black" stroke-width="1" fill="none" cx="390.5" cy="480.5" rx="30" ry="30"/>
-    <text x="380.5" y="486.5" font-family="Times New Roman" font-size="20">S2</text>
-    <path stroke="black" stroke-width="1" fill="none" d="M 197.275,183.703 A 22.5,22.5 0 1 1 223.725,183.703"/>
-    <text x="130.5" y="134.5" font-family="Times New Roman" font-size="20">input a\c\others</text>
-    <polygon fill="black" stroke-width="1" points="223.725,183.703 232.473,180.17 224.382,174.292"/>
-    <path stroke="black" stroke-width="1" fill="none" d="M 239.634,203.354 A 694.593,694.593 0 0 1 541.366,203.354"/>
-    <polygon fill="black" stroke-width="1" points="541.366,203.354 534.643,196.735 532.471,206.497"/>
-    <text x="355.5" y="177.5" font-family="Times New Roman" font-size="20">input b</text>
-    <path stroke="black" stroke-width="1" fill="none" d="M 561.71,239.179 A 516.351,516.351 0 0 1 413.592,461.356"/>
-    <polygon fill="black" stroke-width="1" points="413.592,461.356 422.901,459.828 416.298,452.318"/>
-    <text x="508.5" y="379.5" font-family="Times New Roman" font-size="20">input a\c</text>
-    <path stroke="black" stroke-width="1" fill="none" d="M 401.006,452.403 A 647.317,647.317 0 0 1 548.605,231.005"/>
-    <polygon fill="black" stroke-width="1" points="548.605,231.005 539.392,233.038 546.395,240.176"/>
-    <text x="387.5" y="326.5" font-family="Times New Roman" font-size="20">input b</text>
-    <path stroke="black" stroke-width="1" fill="none" d="M 597.297,197.275 A 22.5,22.5 0 1 1 597.297,223.725"/>
-    <text x="643.5" y="216.5" font-family="Times New Roman" font-size="20">input b</text>
-    <polygon fill="black" stroke-width="1" points="597.297,223.725 600.83,232.473 606.708,224.382"/>
-    <path stroke="black" stroke-width="1" fill="none" d="M 367.177,461.638 A 496.379,496.379 0 0 1 218.94,239.283"/>
-    <polygon fill="black" stroke-width="1" points="218.94,239.283 216.669,248.44 226.175,245.337"/>
-    <text x="111.5" y="379.5" font-family="Times New Roman" font-size="20">input a\c\others</text>
-    <path stroke="black" stroke-width="1" fill="none" d="M 540.976,215.815 A 932.783,932.783 0 0 1 240.024,215.815"/>
-    <polygon fill="black" stroke-width="1" points="240.024,215.815 247.113,222.04 248.726,212.171"/>
-    <text x="360.5" y="249.5" font-family="Times New Roman" font-size="20">others</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="570.5" cy="210.5" rx="30" ry="30"/>
+	<text x="560.5" y="216.5" font-family="Times New Roman" font-size="20">S1</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="210.5" cy="210.5" rx="30" ry="30"/>
+	<text x="200.5" y="216.5" font-family="Times New Roman" font-size="20">S0</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="390.5" cy="480.5" rx="30" ry="30"/>
+	<text x="380.5" y="486.5" font-family="Times New Roman" font-size="20">S2</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 197.275,183.703 A 22.5,22.5 0 1 1 223.725,183.703"/>
+	<text x="130.5" y="134.5" font-family="Times New Roman" font-size="20">input a\c\others</text>
+	<polygon fill="black" stroke-width="1" points="223.725,183.703 232.473,180.17 224.382,174.292"/>
+	<path stroke="black" stroke-width="1" fill="none" d="M 239.634,203.354 A 694.593,694.593 0 0 1 541.366,203.354"/>
+	<polygon fill="black" stroke-width="1" points="541.366,203.354 534.643,196.735 532.471,206.497"/>
+	<text x="355.5" y="177.5" font-family="Times New Roman" font-size="20">input b</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 561.71,239.179 A 516.351,516.351 0 0 1 413.592,461.356"/>
+	<polygon fill="black" stroke-width="1" points="413.592,461.356 422.901,459.828 416.298,452.318"/>
+	<text x="508.5" y="379.5" font-family="Times New Roman" font-size="20">input a\c</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 401.006,452.403 A 647.317,647.317 0 0 1 548.605,231.005"/>
+	<polygon fill="black" stroke-width="1" points="548.605,231.005 539.392,233.038 546.395,240.176"/>
+	<text x="387.5" y="326.5" font-family="Times New Roman" font-size="20">input b</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 597.297,197.275 A 22.5,22.5 0 1 1 597.297,223.725"/>
+	<text x="643.5" y="216.5" font-family="Times New Roman" font-size="20">input b</text>
+	<polygon fill="black" stroke-width="1" points="597.297,223.725 600.83,232.473 606.708,224.382"/>
+	<path stroke="black" stroke-width="1" fill="none" d="M 367.177,461.638 A 496.379,496.379 0 0 1 218.94,239.283"/>
+	<polygon fill="black" stroke-width="1" points="218.94,239.283 216.669,248.44 226.175,245.337"/>
+	<text x="111.5" y="379.5" font-family="Times New Roman" font-size="20">input a\c\others</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 540.976,215.815 A 932.783,932.783 0 0 1 240.024,215.815"/>
+	<polygon fill="black" stroke-width="1" points="240.024,215.815 247.113,222.04 248.726,212.171"/>
+	<text x="360.5" y="249.5" font-family="Times New Roman" font-size="20">others</text>
     </svg>
     <h3 style="margin-top: 3px;">状态转移</h3>
 </div>
-
-
-<h1 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h1><blockquote>
+<h1 id="导航"><a class="markdownIt-Anchor" href="#导航"></a> 导航</h1>
+<blockquote>
 <p>向4个方向走一格，若撞墙，则保持原地，且将<code>hit</code>置高一周期，不撞墙则继续走；若到达B点，<code>arrive</code>置高一周期，并在下一周期返回A</p>
 <table>
 <thead>
 <tr>
-<th align="left">信号名</th>
-<th align="left">方向</th>
-<th align="left">描述</th>
+<th style="text-align:left">信号名</th>
+<th style="text-align:left">方向</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">dir[1:0]</td>
-<td align="left">I</td>
-<td align="left">表示行走的方向：00：向北走 01：向东走 10：向南走 11：向西走</td>
+<tbody>
+<tr>
+<td style="text-align:left">dir[1:0]</td>
+<td style="text-align:left">I</td>
+<td style="text-align:left">表示行走的方向：00：向北走 01：向东走 10：向南走 11：向西走</td>
 </tr>
 <tr>
-<td align="left">clk</td>
-<td align="left">I</td>
-<td align="left">时钟信号</td>
+<td style="text-align:left">clk</td>
+<td style="text-align:left">I</td>
+<td style="text-align:left">时钟信号</td>
 </tr>
 <tr>
-<td align="left">reset</td>
-<td align="left">I</td>
-<td align="left">异步复位信号</td>
+<td style="text-align:left">reset</td>
+<td style="text-align:left">I</td>
+<td style="text-align:left">异步复位信号</td>
 </tr>
 <tr>
-<td align="left">arrive</td>
-<td align="left">O</td>
-<td align="left">是否到达</td>
+<td style="text-align:left">arrive</td>
+<td style="text-align:left">O</td>
+<td style="text-align:left">是否到达</td>
 </tr>
 <tr>
-<td align="left">hit</td>
-<td align="left">O</td>
-<td align="left">是否撞上墙壁</td>
+<td style="text-align:left">hit</td>
+<td style="text-align:left">O</td>
+<td style="text-align:left">是否撞上墙壁</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </blockquote>
 <p>Moore机，几个格子就几个状态，状态转移也比较简单，仔细看好哪个点往那边走会撞墙就好了；B点需要注意，无论往哪走都要转移到A点。</p>
 <p>这个输出就比较<code>tricky</code>了，<code>arrive</code>没什么好说的，次态在B就置1不在就置0，关键在这个<code>hit</code>。我本来直接把<code>hit</code>这个输出口放在转移模块里了，也即<code>hit</code>由初态决定了，但是发现他永远比“当前位置的更新”快一个周期（也很好理解，因为转移模块是组合逻辑，它的更新与输入的更新是同步的，但是“撞墙”这个动作，显然不会是你刚到这个块就撞墙，而是从这个块出发往哪个方向走才会撞墙）所以肯定要由次态决定，且不能通过组合逻辑输出</p>
-<p>怎么解决呢？让<code>hit</code>由次态和<code>dir</code>决定，同时设置一个<code>reg</code>存储<code>hit</code>，这样就能保证<code>hit</code>与<code>arrive</code>同步啦…<del>（最简单粗暴的一集）</del></p>
-<p><img src="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/3.png" alt="导航"></p>
+<p>怎么解决呢？让<code>hit</code>由次态和<code>dir</code>决定，同时设置一个<code>reg</code>存储<code>hit</code>，这样就能保证<code>hit</code>与<code>arrive</code>同步啦…<s>（最简单粗暴的一集）</s></p>
+<p><img src="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/3.png" alt="导航" /></p>
 <blockquote>
-<p><del>这两道组合逻辑比较简单，有缘再更吧…</del></p>
+<p><s>这两道组合逻辑比较简单，有缘再更吧…</s></p>
 </blockquote>
 </div><div class="article-licensing box"><div class="licensing-title"><p>BUAA-CO-P0-HW</p><p><a href="http://wtxyz.com/2024/09/24/CO-p0-afterclass/">http://wtxyz.com/2024/09/24/CO-p0-afterclass/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>OWPETER</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-09-24</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-10-16</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/CO/">CO</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=66e7a27ebb2e4200191dddab&amp;product=inline-share-buttons&amp;source=platform" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2024/09/30/CO-p0-course/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">BUAA-CO-P0-Course</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2024/09/24/CO-p0/"><span class="level-item">BUAA_CO_P0_课下</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
             id: "60f4334bdbec7224ef93c0485789ea21",
@@ -164,7 +167,7 @@
             enableHotKey: true,
             
         })
-        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/image/avatar.jpg" alt="OWPETER"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">OWPETER</p><p class="is-size-6 is-block">無限进步</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">3</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/owpeter" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="/"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="/"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="/"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#正则表达式匹配"><span class="level-left"><span class="level-item">1</span><span class="level-item">正则表达式匹配</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">状态转移</span></span></a></li></ul></li><li><a class="level is-mobile" href="#导航"><span class="level-left"><span class="level-item">2</span><span class="level-item">导航</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CO/"><span class="tag">CO</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OO/"><span class="tag">OO</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="http://cscore.buaa.edu.cn/#/billboard" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">CO</span></span><span class="level-right"><span class="level-item tag">cscore.buaa.edu.cn</span></span></a></li><li><a class="level is-mobile" href="http://oo.buaa.edu.cn/home" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">OO</span></span><span class="level-right"><span class="level-item tag">oo.buaa.edu.cn</span></span></a></li><li><a class="level is-mobile" href="http://gitlab.oo.buaa.edu.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GitLab</span></span><span class="level-right"><span class="level-item tag">gitlab.oo.buaa.edu.cn</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-24T05:32:15.000Z">2024-10-24</time></p><p class="title"><a href="/2024/10/24/CO-p3-afterclass/">BUAA-CO-p3-HW</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-17T12:45:51.000Z">2024-10-17</time></p><p class="title"><a href="/2024/10/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">OOPRE-设计模式</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-15T08:46:39.000Z">2024-10-15</time></p><p class="title"><a href="/2024/10/15/CO-p2-afterclass/">BUAA-CO-p2-HW</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-15T08:00:00.000Z">2024-10-15</time></p><p class="title"><a href="/2024/10/15/CO-p1-course/">BUAA-CO-p1-Course</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-05T11:23:06.000Z">2024-10-05</time></p><p class="title"><a href="/2024/10/05/CO-p1-afterclass/">BUAA-CO-P1-HW</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">十月 2024</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/09/"><span class="level-start"><span class="level-item">九月 2024</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2024 OWPETER</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/owpeter"><i class="fab fa-square-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/image/avatar.jpg" alt="OWPETER"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">OWPETER</p><p class="is-size-6 is-block">無限进步</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">3</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/owpeter" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="/"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="/"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="/"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#正则表达式匹配"><span class="level-left"><span class="level-item">1</span><span class="level-item"> 正则表达式匹配</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">状态转移</span></span></a></li></ul></li><li><a class="level is-mobile" href="#导航"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 导航</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CO/"><span class="tag">CO</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OO/"><span class="tag">OO</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="http://cscore.buaa.edu.cn/#/billboard" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">CO</span></span><span class="level-right"><span class="level-item tag">cscore.buaa.edu.cn</span></span></a></li><li><a class="level is-mobile" href="http://oo.buaa.edu.cn/home" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">OO</span></span><span class="level-right"><span class="level-item tag">oo.buaa.edu.cn</span></span></a></li><li><a class="level is-mobile" href="http://gitlab.oo.buaa.edu.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GitLab</span></span><span class="level-right"><span class="level-item tag">gitlab.oo.buaa.edu.cn</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-28T04:40:29.000Z">2024-10-28</time></p><p class="title"><a href="/2024/10/28/CO-p3-course/">CO-p3-course</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-24T05:32:15.000Z">2024-10-24</time></p><p class="title"><a href="/2024/10/24/CO-p3-afterclass/">BUAA-CO-p3-HW</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-17T12:45:51.000Z">2024-10-17</time></p><p class="title"><a href="/2024/10/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">OOPRE-设计模式</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-15T08:46:39.000Z">2024-10-15</time></p><p class="title"><a href="/2024/10/15/CO-p2-afterclass/">BUAA-CO-p2-HW</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-15T08:00:00.000Z">2024-10-15</time></p><p class="title"><a href="/2024/10/15/CO-p1-course/">BUAA-CO-p1-Course</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">十月 2024</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/09/"><span class="level-start"><span class="level-item">九月 2024</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2024 OWPETER</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/owpeter"><i class="fab fa-square-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
