@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>CO-p5-afterclass - OWPETER&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="owpeter"><meta name="msapplication-TileImage" content="/image/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="owpeter"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="计组P5流水线课下设计文档"><meta property="og:type" content="blog"><meta property="og:title" content="CO-p5-afterclass"><meta property="og:url" content="http://wtxyz.com/2024/11/12/CO-p5-afterclass/"><meta property="og:site_name" content="OWPETER&#039;s Blog"><meta property="og:description" content="计组P5流水线课下设计文档"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%912024-11-18%2022_55_19(1).png"><meta property="article:published_time" content="2024-11-12T12:44:43.000Z"><meta property="article:modified_time" content="2024-11-18T14:56:35.010Z"><meta property="article:author" content="OWPETER"><meta property="article:tag" content="CO"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%912024-11-18%2022_55_19(1).png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://wtxyz.com/2024/11/12/CO-p5-afterclass/"},"headline":"CO-p5-afterclass","image":["https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%912024-11-18%2022_55_19(1).png"],"datePublished":"2024-11-12T12:44:43.000Z","dateModified":"2024-11-18T14:56:35.010Z","author":{"@type":"Person","name":"OWPETER"},"publisher":{"@type":"Organization","name":"OWPETER's Blog","logo":{"@type":"ImageObject","url":"http://wtxyz.com/image/made-with-react.svg"}},"description":"计组P5流水线课下设计文档"}</script><link rel="canonical" href="http://wtxyz.com/2024/11/12/CO-p5-afterclass/"><link rel="icon" href="/image/logo.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%912024-11-18%2022_55_19(1).png" alt="CO-p5-afterclass"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-11-12T12:44:43.000Z" title="2024/11/12 20:44:43">2024-11-12</time>发表</span><span class="level-item"><time dateTime="2024-11-18T14:56:35.010Z" title="2024/11/18 22:56:35">2024-11-18</time>更新</span><span class="level-item">9 分钟读完 (大约1305个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">CO-p5-afterclass</h1><div class="content"><h1 id="命名规范"><a class="markdownIt-Anchor" href="#命名规范"></a> 命名规范</h1>
+<p>首先确定元件、线的命名方式</p>
+<ul>
+<li>流水级名称采用教程的简称，以此为：<code>F D E M W</code></li>
+<li>元件命名，采用<code>流水级简称_元件名</code>命名；实例化时采用<code>小写元件名</code></li>
+<li>流水线寄存器，采用<code>两端流水级简称_REG</code>命名；实例化时采用<code>_小写两端简称_reg</code></li>
+<li>每级CTRL采用<code>流水级简称_CTRL</code>（采用分布式译码）</li>
+<li>每级控制信号采用<code>流水级简称_信号名</code></li>
+<li></li>
+</ul>
+<h1 id="结构"><a class="markdownIt-Anchor" href="#结构"></a> 结构</h1>
+<h2 id="f级"><a class="markdownIt-Anchor" href="#f级"></a> F级</h2>
+<p>input: <code>D_NPC</code>（我的设计将NPC的选择放在了D级）</p>
+<p>output: <code>F_PC</code>, <code>F_Instr</code></p>
+<h3 id="f_ifu"><a class="markdownIt-Anchor" href="#f_ifu"></a> F_IFU</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clk</td>
+<td>I</td>
+<td>时钟信号</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>I</td>
+<td>同步复位</td>
+</tr>
+<tr>
+<td>PCEn</td>
+<td>I</td>
+<td>PC使能</td>
+</tr>
+<tr>
+<td>NPC[31:0]</td>
+<td>I</td>
+<td>选好了的NPC</td>
+</tr>
+<tr>
+<td>PC[31:0]</td>
+<td>O</td>
+<td>当前PC</td>
+</tr>
+<tr>
+<td>Instr[31:0]</td>
+<td>O</td>
+<td>指令</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d级"><a class="markdownIt-Anchor" href="#d级"></a> D级</h2>
+<p>元件：GRF, EXT, CMP, NPC</p>
+<p>input: <code>F_PC</code>, <code>F_Instr</code></p>
+<p>output: <code>D_rs_data</code>, <code>D_rt_data</code>; <code>D_imm32</code>; <code>D_NPC</code>; <code>D_PC</code>, <code>D_Instr</code>;</p>
+<h3 id="fd_reg"><a class="markdownIt-Anchor" href="#fd_reg"></a> FD_REG</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clk</td>
+<td>I</td>
+<td>时钟信号</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>I</td>
+<td>同步复位</td>
+</tr>
+<tr>
+<td>FD_REG_En</td>
+<td>I</td>
+<td>写使能（用于冻结）</td>
+</tr>
+<tr>
+<td>F_PC[31:0]</td>
+<td>I</td>
+<td>F级输入PC</td>
+</tr>
+<tr>
+<td>F_Instr[31:0]</td>
+<td>I</td>
+<td>F级输入Instr</td>
+</tr>
+<tr>
+<td>D_PC[31:0]</td>
+<td>O</td>
+<td>D级使用的PC</td>
+</tr>
+<tr>
+<td>D_Instr[31:0]</td>
+<td>O</td>
+<td>D级使用的Instr</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d_grf"><a class="markdownIt-Anchor" href="#d_grf"></a> D_GRF</h3>
+<ul>
+<li>参考学长的博客，删除RegWr信号，改为“若不写入，则写入地址为0”</li>
+<li>删除P4中GRFWrite模块，直接在顶层模块中进行多路选择</li>
+</ul>
+<p>其他接口与P4无区别，这里不列表格了</p>
+<h3 id="d_ext"><a class="markdownIt-Anchor" href="#d_ext"></a> D_EXT</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EXTOp</td>
+<td>I</td>
+<td>接收来自D_CTRL的控制信号</td>
+</tr>
+<tr>
+<td>Imm16[15:0]</td>
+<td>I</td>
+<td>16位立即数</td>
+</tr>
+<tr>
+<td>Imm32[31:0]</td>
+<td>O</td>
+<td>32位扩展后的立即数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d_cmp"><a class="markdownIt-Anchor" href="#d_cmp"></a> D_CMP</h3>
+<p>去除P4 ALU中的eq_zero端口，改为D级中的此模块</p>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMP_rs[31:0]</td>
+<td>I</td>
+<td>转发后的$rs</td>
+</tr>
+<tr>
+<td>CMP_rt[31:0]</td>
+<td>I</td>
+<td>转发后的$rt</td>
+</tr>
+<tr>
+<td>CMPOp[1:0]</td>
+<td>I</td>
+<td>比较方式的选择信号，可拓展</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>O</td>
+<td>是否跳转</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d_npc"><a class="markdownIt-Anchor" href="#d_npc"></a> D_NPC</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NPCOp[2:0]</td>
+<td>I</td>
+<td>NPC控制信号</td>
+</tr>
+<tr>
+<td>D_PC[31:0]</td>
+<td>I</td>
+<td>D级PC，用于branch型跳转</td>
+</tr>
+<tr>
+<td>F_PC[31:0]</td>
+<td>I</td>
+<td>F级PC，用于default</td>
+</tr>
+<tr>
+<td>NPC_rs[31:0]</td>
+<td>I</td>
+<td>转发后的$rs, 用于jr型</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>I</td>
+<td>是否进行branch</td>
+</tr>
+<tr>
+<td>NPC[31:0]</td>
+<td>O</td>
+<td>处理后的NPC</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e级"><a class="markdownIt-Anchor" href="#e级"></a> E级</h2>
+<p>元件：ALU</p>
+<p>input: <code>D_rs_data</code>, <code>D_rt_data</code>, <code>D_imm32</code>; <code>D_PC</code>, <code>D_Instr</code></p>
+<p>output: <code>E_ALU_result</code>, <code>E_rt_data</code>, <code>E_PC</code>, <code>E_Instr</code></p>
+<h3 id="de_reg"><a class="markdownIt-Anchor" href="#de_reg"></a> DE_REG</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clk</td>
+<td>I</td>
+<td>时钟信号</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>I</td>
+<td>同步复位</td>
+</tr>
+<tr>
+<td>D_rs_data[31:0]</td>
+<td>I</td>
+<td>D级$rs</td>
+</tr>
+<tr>
+<td>D_rt_data[31:0]</td>
+<td>I</td>
+<td>D级$rt</td>
+</tr>
+<tr>
+<td>D_imm32[31:0]</td>
+<td>I</td>
+<td>扩展后32位立即数</td>
+</tr>
+<tr>
+<td>D_PC[31:0]</td>
+<td>I</td>
+<td>D级PC</td>
+</tr>
+<tr>
+<td>D_Instr[31:0]</td>
+<td>I</td>
+<td>D级指令</td>
+</tr>
+<tr>
+<td>E_rs_data[31:0]</td>
+<td>O</td>
+<td>E级使用的$rs</td>
+</tr>
+<tr>
+<td>E_rt_data[31:0]</td>
+<td>O</td>
+<td>E级使用的$rt</td>
+</tr>
+<tr>
+<td>E_imm32[31:0]</td>
+<td>O</td>
+<td>E级使用的32位立即数</td>
+</tr>
+<tr>
+<td>E_PC[31:0]</td>
+<td>O</td>
+<td>E级PC</td>
+</tr>
+<tr>
+<td>E_Instr[31:0]</td>
+<td>O</td>
+<td>E级指令</td>
+</tr>
+</tbody>
+</table>
+<h3 id="e_alu"><a class="markdownIt-Anchor" href="#e_alu"></a> E_ALU</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A[31:0]</td>
+<td>I</td>
+<td>A端口</td>
+</tr>
+<tr>
+<td>B[31:0]</td>
+<td>I</td>
+<td>B端口</td>
+</tr>
+<tr>
+<td>ALUOp[2:0]</td>
+<td>I</td>
+<td>计算模式选择</td>
+</tr>
+<tr>
+<td>ALUresult[31:0]</td>
+<td>O</td>
+<td>计算结果</td>
+</tr>
+</tbody>
+</table>
+<h2 id="m级"><a class="markdownIt-Anchor" href="#m级"></a> M级</h2>
+<p>元件：DM</p>
+<p>input: <code>E_ALUresult</code>, <code>E_rt_data</code>; <code>E_PC</code>, <code>E_Instr</code></p>
+<p>output: <code>M_ALUresult</code>, <code>M_RD</code>; <code>M_PC</code>, <code>M_Instr</code></p>
+<h3 id="em_reg"><a class="markdownIt-Anchor" href="#em_reg"></a> EM_REG</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clk</td>
+<td>I</td>
+<td>时钟信号</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>I</td>
+<td>同步复位</td>
+</tr>
+<tr>
+<td>E_ALUresult[31:0]</td>
+<td>I</td>
+<td>E级ALU计算结果</td>
+</tr>
+<tr>
+<td>E_rt_data[31:0]</td>
+<td>I</td>
+<td>E级接收转发后的$rt</td>
+</tr>
+<tr>
+<td>E_PC[31:0]</td>
+<td>I</td>
+<td>E级PC</td>
+</tr>
+<tr>
+<td>E_Instr[31:0]</td>
+<td>I</td>
+<td>E级指令</td>
+</tr>
+<tr>
+<td>M_ALUresult[31:0]</td>
+<td>O</td>
+<td>M级使用的ALU计算结果</td>
+</tr>
+<tr>
+<td>M_rt_data[31:0]</td>
+<td>O</td>
+<td>M级使用的$rt</td>
+</tr>
+<tr>
+<td>M_PC[31:0]</td>
+<td>O</td>
+<td>M级PC</td>
+</tr>
+<tr>
+<td>M_Instr[31:0]</td>
+<td>O</td>
+<td>M级指令</td>
+</tr>
+</tbody>
+</table>
+<h3 id="m_dm"><a class="markdownIt-Anchor" href="#m_dm"></a> M_DM</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clk</td>
+<td>I</td>
+<td>时钟信号</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>I</td>
+<td>同步复位</td>
+</tr>
+<tr>
+<td>MemWr</td>
+<td>I</td>
+<td>写使能</td>
+</tr>
+<tr>
+<td>Addr[31:0]</td>
+<td>I</td>
+<td>写入地址</td>
+</tr>
+<tr>
+<td>Data[31:0]</td>
+<td>I</td>
+<td>写入数据</td>
+</tr>
+<tr>
+<td>RD[31:0]</td>
+<td>O</td>
+<td>读出数据</td>
+</tr>
+</tbody>
+</table>
+<p>后续可增加<code>DMOp</code>接口，对更多种类的load指令进行扩展</p>
+<h2 id="w级"><a class="markdownIt-Anchor" href="#w级"></a> W级</h2>
+<p>input: <code>M_ALUresult</code>, <code>M_RD</code>; <code>M_PC</code>, <code>M_Instr</code></p>
+<h3 id="wm_reg"><a class="markdownIt-Anchor" href="#wm_reg"></a> WM_REG</h3>
+<table>
+<thead>
+<tr>
+<th>信号名</th>
+<th>I/O</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clk</td>
+<td>I</td>
+<td>时钟信号</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>I</td>
+<td>同步复位</td>
+</tr>
+<tr>
+<td>M_RD[31:0]</td>
+<td>I</td>
+<td>M级DM读出数据</td>
+</tr>
+<tr>
+<td>M_ALUresult[31:0]</td>
+<td>I</td>
+<td>M级传递的ALU计算结果</td>
+</tr>
+<tr>
+<td>M_PC[31:0]</td>
+<td>I</td>
+<td>M级PC</td>
+</tr>
+<tr>
+<td>M_Instr[31:0]</td>
+<td>I</td>
+<td>M级指令</td>
+</tr>
+<tr>
+<td>W_RD[31:0]</td>
+<td>O</td>
+<td>W级使用的DM读出</td>
+</tr>
+<tr>
+<td>W_ALUresult[31:0]</td>
+<td>O</td>
+<td>W级使用的ALU计算结果</td>
+</tr>
+<tr>
+<td>W_PC[31:0]</td>
+<td>O</td>
+<td>W级PC</td>
+</tr>
+<tr>
+<td>W_Instr[31:0]</td>
+<td>O</td>
+<td>W级指令</td>
+</tr>
+</tbody>
+</table>
+<h1 id="冒险的解决"><a class="markdownIt-Anchor" href="#冒险的解决"></a> 冒险的解决</h1>
+<h2 id="at法"><a class="markdownIt-Anchor" href="#at法"></a> AT法</h2>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>u</mi><mi>s</mi><mi>e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{use}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ：经过多少个时钟周期就必须要使用相应的数据</p>
+<p>注意，一条指令可以有多条。如 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>u</mi><mi>s</mi><mi>e</mi><mi mathvariant="normal">_</mi><mi>r</mi><mi>s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{use\_rs}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05033em;vertical-align:-0.367em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139199999999997em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">e</span><span class="mord mtight" style="margin-right:0.02778em;">_</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.367em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>u</mi><mi>s</mi><mi>e</mi><mi mathvariant="normal">_</mi><mi>r</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{use\_rt}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05033em;vertical-align:-0.367em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">e</span><span class="mord mtight" style="margin-right:0.02778em;">_</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.367em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>n</mi><mi>e</mi><mi>w</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{new}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ：某个流水级中的某条指令，还需要多少个周期才能将结果写入<strong>流水级寄存器</strong></p>
+<p>对于不产生新数据的指令，我们认为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>n</mi><mi>e</mi><mi>w</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{new}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 始终为0</p>
+<h2 id="数据冒险"><a class="markdownIt-Anchor" href="#数据冒险"></a> 数据冒险</h2>
+<h3 id="旁路转发"><a class="markdownIt-Anchor" href="#旁路转发"></a> 旁路转发</h3>
+<p><code>X_AN == Y_AM &amp;&amp; X_AN != 5'b0 &amp;&amp; M_T_NEW == 2'b00 &amp;&amp; RegWrite_Y == 1</code></p>
+<p>读寄存器编号和写寄存器编号相同 &amp;&amp; 寄存器编号不为0 &amp;&amp; 转发流水级的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>n</mi><mi>e</mi><mi>w</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">T_{new}=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> &amp;&amp; GRF写使能为1</p>
+<p>若GRF写使能为0，YA置0即可</p>
+<p>为解决同一时钟周期写和读同一寄存器的问题，将GRF改为下跳沿写入</p>
+<p>回传：根据GRFWDOp选择每一级的回传数据</p>
+<ul>
+<li>jal旁路转发：
+<ul>
+<li>A1 = A2 = 31</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="阻塞一级"><a class="markdownIt-Anchor" href="#阻塞一级"></a> 阻塞一级</h3>
+<ol>
+<li>冻结<code>FD_REG</code>，即将<code>FD_REG_En</code>置0</li>
+<li>清除<code>DE_REG</code>，全部置0（同步复位即可）</li>
+<li>禁止PC继续计数，即将<code>PCEn</code>置0</li>
+</ol>
+<p>阻塞第二级：</p>
+<ol>
+<li>冻结<code>FD_REG</code></li>
+<li>清除<code>DE_REG</code></li>
+<li><code>PCEn</code>置0<br />
+（让E级的nop往下传，给E级一个新的nop）</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>CO-p5-afterclass</p><p><a href="http://wtxyz.com/2024/11/12/CO-p5-afterclass/">http://wtxyz.com/2024/11/12/CO-p5-afterclass/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>OWPETER</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-11-12</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-11-18</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/CO/">CO</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=66e7a27ebb2e4200191dddab&amp;product=inline-share-buttons&amp;source=platform" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2024/11/12/CO-p4-course/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">CO-p4-course</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2024/10/28/CO-p3-course/"><span class="level-item">CO-p3-course</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "890f71b95d5ca57bc57c3fd3ff2fcabb",
+            repo: "owpeter.github.io",
+            owner: "owpeter",
+            clientID: "Ov23lioYgiFwutTsSgTk",
+            clientSecret: "ffcfefcf636bdd2bcc66e94548649f3357ca7b0b",
+            admin: ["owpeter"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/image/avatar.jpg" alt="OWPETER"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">OWPETER</p><p class="is-size-6 is-block">無限进步</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">3</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/owpeter" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="/"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="/"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="/"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#命名规范"><span class="level-left"><span class="level-item">1</span><span class="level-item"> 命名规范</span></span></a></li><li><a class="level is-mobile" href="#结构"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 结构</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#f级"><span class="level-left"><span class="level-item">2.1</span><span class="level-item"> F级</span></span></a></li><li><a class="level is-mobile" href="#d级"><span class="level-left"><span class="level-item">2.2</span><span class="level-item"> D级</span></span></a></li><li><a class="level is-mobile" href="#e级"><span class="level-left"><span class="level-item">2.3</span><span class="level-item"> E级</span></span></a></li><li><a class="level is-mobile" href="#m级"><span class="level-left"><span class="level-item">2.4</span><span class="level-item"> M级</span></span></a></li><li><a class="level is-mobile" href="#w级"><span class="level-left"><span class="level-item">2.5</span><span class="level-item"> W级</span></span></a></li></ul></li><li><a class="level is-mobile" href="#冒险的解决"><span class="level-left"><span class="level-item">3</span><span class="level-item"> 冒险的解决</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#at法"><span class="level-left"><span class="level-item">3.1</span><span class="level-item"> AT法</span></span></a></li><li><a class="level is-mobile" href="#数据冒险"><span class="level-left"><span class="level-item">3.2</span><span class="level-item"> 数据冒险</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CO/"><span class="tag">CO</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OO/"><span class="tag">OO</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="http://cscore.buaa.edu.cn/#/billboard" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">CO</span></span><span class="level-right"><span class="level-item tag">cscore.buaa.edu.cn</span></span></a></li><li><a class="level is-mobile" href="http://oo.buaa.edu.cn/home" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">OO</span></span><span class="level-right"><span class="level-item tag">oo.buaa.edu.cn</span></span></a></li><li><a class="level is-mobile" href="http://gitlab.oo.buaa.edu.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GitLab</span></span><span class="level-right"><span class="level-item tag">gitlab.oo.buaa.edu.cn</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-11-18T05:55:31.000Z">2024-11-18</time></p><p class="title"><a href="/2024/11/18/CO-p5-course/">CO-p5-course</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-11-12T13:37:47.000Z">2024-11-12</time></p><p class="title"><a href="/2024/11/12/CO-p4-course/">CO-p4-course</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-11-12T12:44:43.000Z">2024-11-12</time></p><p class="title"><a href="/2024/11/12/CO-p5-afterclass/">CO-p5-afterclass</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-28T04:40:29.000Z">2024-10-28</time></p><p class="title"><a href="/2024/10/28/CO-p3-course/">CO-p3-course</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-24T05:32:15.000Z">2024-10-24</time></p><p class="title"><a href="/2024/10/24/CO-p3-afterclass/">BUAA-CO-p3-HW</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/11/"><span class="level-start"><span class="level-item">十一月 2024</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/10/"><span class="level-start"><span class="level-item">十月 2024</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/09/"><span class="level-start"><span class="level-item">九月 2024</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/image/made-with-react.svg" alt="OWPETER&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2024 OWPETER</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/owpeter"><i class="fab fa-square-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
