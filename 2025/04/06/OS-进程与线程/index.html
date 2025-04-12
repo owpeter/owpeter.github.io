@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://owpeter.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-04-06T03:24:45.000Z">
-<meta property="article:modified_time" content="2025-04-06T03:27:00.113Z">
+<meta property="article:modified_time" content="2025-04-12T06:50:43.701Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary">
@@ -604,7 +604,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">21</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">22</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -655,8 +655,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-04-06 11:27</span>
-            <span class="mobile">2025-04-06 11:27</span>
+            <span class="desktop">2025-04-12 14:50:43</span>
+            <span class="mobile">2025-04-12 14:50:43</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -704,12 +704,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.4k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.4k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>8 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 Mins</span>
         </span>
     
     
@@ -847,6 +847,40 @@ mjx-container[display="true"] + br {
 </li>
 </ul>
 <h2 id="基于管程的同步与互斥"><a href="#基于管程的同步与互斥" class="headerlink" title="基于管程的同步与互斥"></a>基于管程的同步与互斥</h2><p>管程：把分散的临界区集中起来，为每个共享资源设计一个专门的机构来统一管理各进程对该资源的访问，这个机构成为管程。</p>
+<h2 id="经典进程同步与互斥问题"><a href="#经典进程同步与互斥问题" class="headerlink" title="经典进程同步与互斥问题"></a>经典进程同步与互斥问题</h2><h3 id="生产者消费者问题"><a href="#生产者消费者问题" class="headerlink" title="生产者消费者问题"></a>生产者消费者问题</h3><p>蕴含两个隐藏条件：消费者和生产者数量不固定，消费者和生产者不能同时使用缓存区</p>
+<p>信号量设置：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">semaphore mutex = 1;</span><br><span class="line">semaphore empty = N;</span><br><span class="line">semaphore full = 0;</span><br></pre></td></tr></table></figure></div>
+<p><code>mutex</code>其实就是一个锁，保证生产者和消费者不同时进行读写，<code>empty</code>代表一个空位，当<code>empty</code>为0时，说明<code>buffer</code>已经“没有空位”，即满了，那么此时生产者不能再生产，需要等待。<code>full</code>代表一个填充位，如果<code>full</code>为0则说明队列“没有填充位”，即空了，此时消费者无法进行消费，必须等待生产者进行生产。</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// producer</span></span><br><span class="line">P(empty);   <span class="comment">// 消耗一个empty，如果empty为空则等待</span></span><br><span class="line">P(mutex);</span><br><span class="line">  buffer.add(object);</span><br><span class="line">V(mutex);</span><br><span class="line">V(full);    <span class="comment">// 释放一个full</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// consumer</span></span><br><span class="line">P(full);    <span class="comment">// 消耗一个full，如果full为空则等待</span></span><br><span class="line">P(mutex);</span><br><span class="line">  buffer.remove();</span><br><span class="line">V(mutex);</span><br><span class="line">V(empty);   <span class="comment">// 释放一个empty</span></span><br></pre></td></tr></table></figure></div>
+
+<p>需要注意的是，<code>P(empty)</code>和<code>P(mutex)</code>的顺序不能颠倒，因为我们必须先判断是否需要等待<code>empty</code>，如果不需要等待才可以去获得<code>mutex</code>锁，否则，如果先获得<code>mutex</code>锁再去判断<code>empty</code>，这时如果需要等待<code>empty</code>，线程将无法释放<code>mutex</code>锁，导致消费者就无法去消费，造成死锁。</p>
+<h3 id="读者写者问题"><a href="#读者写者问题" class="headerlink" title="读者写者问题"></a>读者写者问题</h3><p>对于共享资源的读写操作，任意时刻“写者”只能有一个，而读者允许有多个。</p>
+<p>举例来说，在12306买火车票时，所有查票的用户都是读者，而买票的用户就是写者，因为买票操作需要改变剩余票数等信息。</p>
+<ul>
+<li>基于信号量的读写锁</li>
+</ul>
+<p>对于第一个读者，需要获取写锁，后面的读者无需获取写锁。对于最后一个读者，需要释放写锁，其他读者不能释放写锁。</p>
+<p>对于每个写者，均需要获取、释放写锁。</p>
+<p>为了防止出现“第一个读者尚未获得写锁，又来了一个读者”导致后续读者直接进入读操作，我们需要在第一个读者尝试获取写锁前加一个锁，每个读者都需要去获取这个锁。最后一个读者释放写锁的过程也是类似的。</p>
+<p>我们可以得到如下伪代码：</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">P(mutex);</span><br><span class="line"><span class="keyword">if</span> (readcount == <span class="number">0</span>){</span><br><span class="line">  P(wmutex);</span><br><span class="line">  readcount = readcount +<span class="number">1</span>;</span><br><span class="line">}</span><br><span class="line">V(mutex);</span><br><span class="line">read();</span><br><span class="line">P(mutex);</span><br><span class="line">readcount = readcount <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">if</span> (readcount == <span class="number">0</span>) {</span><br><span class="line">  V(wmutex); </span><br><span class="line">}</span><br><span class="line">V(mutex);</span><br></pre></td></tr></table></figure></div>
+
+<p>但这样的读写锁对于写者是不公平的，因为一旦有一个读者开始进行读操作，就算后面的写者来的再早，页必须等所有读者完成读操作。</p>
+<ul>
+<li>公平读写锁</li>
+</ul>
+<p>…</p>
+<h3 id="哲学家就餐问题"><a href="#哲学家就餐问题" class="headerlink" title="哲学家就餐问题"></a>哲学家就餐问题</h3><p>5个哲学家围坐一张桌子，桌子上放5支筷子，每个哲学家有就餐和思考两个动作，其中就餐动作必须在获得左手和右手两支筷子后才能进行</p>
+<p>如果采用传统的信号量方法：</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">P(chopstick[i]); </span><br><span class="line">P(chopstick[(i+<span class="number">1</span>)mod <span class="number">5</span>]); </span><br><span class="line">eat();</span><br><span class="line">V(chopstick[i]); </span><br><span class="line">V(chopstick [(i+<span class="number">1</span>)mod <span class="number">5</span>]); </span><br><span class="line">think();</span><br></pre></td></tr></table></figure></div>
+<p>可能会有：所有哲学家均获得了自己左手边的筷子，而无法获得右手边的筷子，导致死锁。</p>
+<p>解决思路也有很多：</p>
+<ul>
+<li>至多只允许四个哲学家同时（尝试）拿起筷子进餐，以保证至少有一个哲学家能够进餐，最终总会释放出他所使用过的两支筷子，从而可使更多的哲学家进餐。</li>
+<li>对筷子进行编号，奇数号先拿左，再拿右；偶数号相反。</li>
+<li>同时拿起两根筷子，否则不拿起。（基于AND信号量集）</li>
+</ul>
+<h3 id="理发师问题"><a href="#理发师问题" class="headerlink" title="理发师问题"></a>理发师问题</h3><p>进程：理发师，顾客<br>行为：理发师-&gt;理发，顾客-&gt;接受理发</p>
 
 		</div>
 
@@ -861,7 +895,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-04-06 11:27:00
+                    :</strong> 2025-04-12 14:50:43
             </li>
         
         <li>
@@ -897,6 +931,18 @@ mjx-container[display="true"] + br {
 
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/04/12/OS-lab2/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">OS-lab2</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
 			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -967,7 +1013,7 @@ mjx-container[display="true"] + br {
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">OS-进程与线程</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91"><span class="nav-text">并发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%A6%82%E5%BF%B5"><span class="nav-text">两个概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%89%A7%E8%A1%8C%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">并发执行的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AF%E6%81%A9%E6%96%AF%E5%9D%A6%E6%9D%A1%E4%BB%B6"><span class="nav-text">伯恩斯坦条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">进程的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%93%E6%9E%84%E7%89%B9%E5%BE%81"><span class="nav-text">进程的结构特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E6%8E%A7%E5%88%B6"><span class="nav-text">进程的状态与控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">进程控制的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E6%BC%94%E8%BF%9B"><span class="nav-text">进程的状态与演进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2%E4%B8%8E%E9%99%B7%E5%85%A5%E5%86%85%E6%A0%B8"><span class="nav-text">进程上下文切换与陷入内核</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">线程的实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%92%8C%E5%B9%B6%E5%8F%91"><span class="nav-text">同步和并发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BA%92%E6%96%A5%E9%97%AE%E9%A2%98"><span class="nav-text">同步与互斥问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%BF%99%E7%AD%89%E7%9A%84%E4%BA%92%E6%96%A5%E7%AE%97%E6%B3%95"><span class="nav-text">基于忙等的互斥算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%AE%97%E6%B3%95"><span class="nav-text">软件算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E7%AE%97%E6%B3%95"><span class="nav-text">硬件算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">基于信号量的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%AE%A1%E7%A8%8B%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BA%92%E6%96%A5"><span class="nav-text">基于管程的同步与互斥</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91"><span class="nav-text">并发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%A6%82%E5%BF%B5"><span class="nav-text">两个概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%89%A7%E8%A1%8C%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">并发执行的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AF%E6%81%A9%E6%96%AF%E5%9D%A6%E6%9D%A1%E4%BB%B6"><span class="nav-text">伯恩斯坦条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">进程的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%93%E6%9E%84%E7%89%B9%E5%BE%81"><span class="nav-text">进程的结构特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E6%8E%A7%E5%88%B6"><span class="nav-text">进程的状态与控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">进程控制的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E6%BC%94%E8%BF%9B"><span class="nav-text">进程的状态与演进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2%E4%B8%8E%E9%99%B7%E5%85%A5%E5%86%85%E6%A0%B8"><span class="nav-text">进程上下文切换与陷入内核</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">线程的实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%92%8C%E5%B9%B6%E5%8F%91"><span class="nav-text">同步和并发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BA%92%E6%96%A5%E9%97%AE%E9%A2%98"><span class="nav-text">同步与互斥问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%BF%99%E7%AD%89%E7%9A%84%E4%BA%92%E6%96%A5%E7%AE%97%E6%B3%95"><span class="nav-text">基于忙等的互斥算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%AE%97%E6%B3%95"><span class="nav-text">软件算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E7%AE%97%E6%B3%95"><span class="nav-text">硬件算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">基于信号量的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%AE%A1%E7%A8%8B%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BA%92%E6%96%A5"><span class="nav-text">基于管程的同步与互斥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BA%92%E6%96%A5%E9%97%AE%E9%A2%98"><span class="nav-text">经典进程同步与互斥问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98"><span class="nav-text">生产者消费者问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E8%80%85%E5%86%99%E8%80%85%E9%97%AE%E9%A2%98"><span class="nav-text">读者写者问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%B2%E5%AD%A6%E5%AE%B6%E5%B0%B1%E9%A4%90%E9%97%AE%E9%A2%98"><span class="nav-text">哲学家就餐问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E5%8F%91%E5%B8%88%E9%97%AE%E9%A2%98"><span class="nav-text">理发师问题</span></a></li></ol></li></ol></li></ol>
 
 	</div>
 </div>
@@ -994,11 +1040,11 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        21 posts in total
+                        22 posts in total
                     </span>
                     
                         <span>
-                            31.7k words in total
+                            34.6k words in total
                         </span>
                     
                 </p>
