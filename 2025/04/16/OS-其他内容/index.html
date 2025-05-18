@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://owpeter.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-04-16T11:56:52.000Z">
-<meta property="article:modified_time" content="2025-04-16T12:00:46.335Z">
+<meta property="article:modified_time" content="2025-05-15T06:47:30.202Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary">
@@ -655,8 +655,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-04-16 20:46</span>
-            <span class="mobile">2025-04-16 20:46</span>
+            <span class="desktop">2025-05-15 14:47:30</span>
+            <span class="mobile">2025-05-15 14:47:30</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -704,7 +704,7 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>379 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>517 Words</span>
         </span>
     
     
@@ -740,6 +740,8 @@ mjx-container[display="true"] + br {
 <p>设置陷阱的主要目的是为了系统调用</p>
 <h2 id="对比表"><a href="#对比表" class="headerlink" title="对比表"></a>对比表</h2><p><img lazyload="" src="/images/loading.svg" data-src="https://tsxb-top-pic.oss-cn-hangzhou.aliyuncs.com/owps/%E5%BC%82%E5%B8%B8%E4%B8%AD%E6%96%AD%E8%A1%A8.png" alt="对比表"></p>
 <p>需要注意“返回行为”一列。指令在异常到来前已经成功执行的，返回到下一条指令，指令本身触发了异常，经过操作系统处理后返回当前指令（因为当前指令还没有执行）  </p>
+<h1 id="概论部分"><a href="#概论部分" class="headerlink" title="概论部分"></a>概论部分</h1><h2 id="API与ABI"><a href="#API与ABI" class="headerlink" title="API与ABI"></a>API与ABI</h2><p>API全称Application Programming Interface，如果两个操作系统是<strong>API兼容的</strong>，那么这两个操作系统可以接受面向同一类接口编写的程序，并且在不同的操作系统中，只需要把源代码编译一次就可以直接执行了</p>
+<p>ABI, Application Binary Interface, 中文为“应用程序二进制接口”，那么如果一个程序在一个操作系统上可以执行，其在另一个<strong>ABI兼容</strong>的操作系统上无需编译即可直接执行</p>
 
 		</div>
 
@@ -754,7 +756,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-04-16 20:00:46
+                    :</strong> 2025-05-15 14:47:30
             </li>
         
         <li>
@@ -872,7 +874,7 @@ mjx-container[display="true"] + br {
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">OS-其他内容</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%B9%E5%A4%84%E7%90%86-%E5%A4%9A%E9%81%93-%E5%88%86%E6%97%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">批处理-多道-分时系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8-Exceptions"><span class="nav-text">异常 Exceptions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%EF%BC%88interrupts%EF%BC%89"><span class="nav-text">中断（interrupts）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%B7%E9%98%B1%EF%BC%88trap%EF%BC%89"><span class="nav-text">陷阱（trap）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94%E8%A1%A8"><span class="nav-text">对比表</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%B9%E5%A4%84%E7%90%86-%E5%A4%9A%E9%81%93-%E5%88%86%E6%97%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">批处理-多道-分时系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8-Exceptions"><span class="nav-text">异常 Exceptions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%EF%BC%88interrupts%EF%BC%89"><span class="nav-text">中断（interrupts）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%B7%E9%98%B1%EF%BC%88trap%EF%BC%89"><span class="nav-text">陷阱（trap）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-text">系统调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94%E8%A1%A8"><span class="nav-text">对比表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%AE%BA%E9%83%A8%E5%88%86"><span class="nav-text">概论部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#API%E4%B8%8EABI"><span class="nav-text">API与ABI</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -903,7 +905,7 @@ mjx-container[display="true"] + br {
                     </span>
                     
                         <span>
-                            54.3k words in total
+                            56.4k words in total
                         </span>
                     
                 </p>
