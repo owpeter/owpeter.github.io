@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://owpeter.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2024-09-24T08:42:22.000Z">
-<meta property="article:modified_time" content="2025-01-25T12:53:59.809Z">
+<meta property="article:modified_time" content="2025-07-14T06:51:20.848Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CO">
 <meta name="twitter:card" content="summary">
@@ -655,8 +655,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-01-25 20:53:59</span>
-            <span class="mobile">2025-01-25 20:53:59</span>
+            <span class="desktop">2025-07-14 14:51:20</span>
+            <span class="mobile">2025-07-14 14:51:20</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -722,13 +722,9 @@ mjx-container[display="true"] + br {
 <p>匹配规则：</p>
 <ul>
 <li>[…]是指要匹配中括号中的字符(注意是字符不是字符串),比如[xyz]就是要匹配x y z这三个字符中的任意一个。</li>
-<li>{…}是指要求匹配“{”前的那个字符几次，比如a{2}是指要匹配a两次，a{2,4}是指要匹配a 2至4次,a{,4}指要匹配a 0至4次，a{2,}指要匹配a 2至无穷次。所以[cd]{1,2}就是要求匹配(c或d)一次或两次,即cc、dd、cd、dc、c、d都是能匹配的。</li>
+<li>{…}是指要求匹配“{”前的那个字符几次，比如a{2}是指要匹配a两次，a{2,4}是指要匹配a 2至4次,a{,4}指要匹配a 0至4次，a{2,}指要匹配a 2至无穷次。所以[cd]{1,2}就是要求匹配(c或d)一次或两次,即cc、dd、cd、dc、c、d都是能匹配的。<br>本题要求使用Mealy状态机匹配 <code>b{1,2}[ac]{2}</code>的子串并输出。为简化电路，我们用 <code>00</code>表示 <code>a</code>，<code>01</code>表示 <code>b</code>，<code>10</code>表示 <code>c</code>，<code>11</code>表示其他字符</li>
 </ul>
 </blockquote>
-<!-- more -->
-
-<blockquote>
-<p>本题要求使用Mealy状态机匹配 <code>b{1,2}[ac]{2}</code>的子串并输出。为简化电路，我们用 <code>00</code>表示 <code>a</code>，<code>01</code>表示 <code>b</code>，<code>10</code>表示 <code>c</code>，<code>11</code>表示其他字符</p>
 <table>
 <thead>
 <tr>
@@ -753,7 +749,6 @@ mjx-container[display="true"] + br {
 <td>输出是否检测到了与表达式匹配的子串</td>
 </tr>
 </tbody></table>
-</blockquote>
 <p>首先状态机类型不能搞错了，搞错了是万万不可能过的。本题要求Mealy机，即输入与输出有关。这就确定了转移块有2个输入口一个输出口，输出块也有2个输入口一个输出口</p>
 <p>如果是Moore机，那么会有4个状态，其中最后一个状态是用来判断是否输出的，但Mealy机3个状态即可，输出时通过判断“是否处于最后状态”<code>&amp;&amp;</code>“输入是否合理”，决定输出内容。</p>
 <p>另外，虽然Mealy机的输出序列与Moore机相同，<strong>但Mealy机在输出时间上比Moore机快了一个周期。<strong>如果发现评测机返回的结果让你疑惑“这个时候怎么会有输出”，那么可能是</strong>状态机类型搞错了</strong>导致输出错位了一个周期</p>
@@ -850,7 +845,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-01-25 20:53:59
+                    :</strong> 2025-07-14 14:51:20
             </li>
         
         <li>
