@@ -146,7 +146,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://owpeter.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-07-22T01:21:09.000Z">
-<meta property="article:modified_time" content="2025-07-22T08:32:58.293Z">
+<meta property="article:modified_time" content="2025-08-04T09:55:35.949Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="ML">
 <meta name="twitter:card" content="summary">
@@ -716,7 +716,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">32</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">33</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -767,8 +767,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-07-22 16:32:58</span>
-            <span class="mobile">2025-07-22 16:32:58</span>
+            <span class="desktop">2025-08-04 17:55:35</span>
+            <span class="mobile">2025-08-04 17:55:35</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -806,12 +806,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>982 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.2k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 Mins</span>
         </span>
     
     
@@ -854,6 +854,15 @@ mjx-container[display="true"] + br {
 <p>这样，我们就可以计算线程编号了：</p>
 <div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i=blockIdx.x*blockDim.x+threadIdx.x;</span><br></pre></td></tr></table></figure></div>
 
+<h2 id="线程管理2"><a href="#线程管理2" class="headerlink" title="线程管理2"></a>线程管理2</h2><p>上文介绍了一维网格如何确定线程全局index，这里介绍二维网格。</p>
+<p>其实线程在二维网格中每一维的全局index的求法是一样的，并且也和一维的求法一样：</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ix = threadIdx.x + blockDim.x * blockIdx.x;</span><br><span class="line">iy = threadIdx.y + blockDim.y * blockIdx.y;</span><br></pre></td></tr></table></figure></div>
+
+<p>获得线程全局index的目的是让不同的线程访问不同位置的内存，但数据在内存中的排布是连续的，也就说是一维的，因此我们需要将二维的<code>ix,iy</code>转换成<code>idx</code></p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">idx = ix + iy * nx;</span><br></pre></td></tr></table></figure></div>
+
+<p>其中<code>nx</code>是矩阵中一行元素的个数。</p>
+<p>不过经过我的实验，在计算二维矩阵时把块中线程按一维安排似乎完全没有问题。</p>
 <h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><p>核函数就是由设备上多个线程运行的代码，也就是你GPU要干的最核心的活。</p>
 <p>在<code>main</code>函数中用以下代码调用核函数：</p>
 <div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kernel_name&lt;&lt;&lt;grid,block&gt;&gt;&gt;(argument <span class="built_in">list</span>);</span><br></pre></td></tr></table></figure></div>
@@ -896,15 +905,10 @@ mjx-container[display="true"] + br {
 <li>显示异步</li>
 </ul>
 <h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><p>上文提到的CUDA API提供的函数的返回类型大多为<code>cudaError_t</code>，这也是枚举类型，可以直接<code>%d</code>打印出来，也可以将用<code>cudaGetErrorString</code>获得该错误码的详细信息</p>
-<h1 id="线程管理2"><a href="#线程管理2" class="headerlink" title="线程管理2"></a>线程管理2</h1><p>上文介绍了一维网格如何确定线程全局index，这里介绍二维网格。</p>
-<p>其实线程在二维网格中每一维的全局index的求法是一样的，并且也和一维的求法一样：</p>
-<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ix = threadIdx.x + blockDim.x * blockIdx.x;</span><br><span class="line">iy = threadIdx.y + blockDim.y * blockIdx.y;</span><br></pre></td></tr></table></figure></div>
+<h1 id="线程束"><a href="#线程束" class="headerlink" title="线程束"></a>线程束</h1><!-- 关于线程束的介绍，参见 -->
 
-<p>获得线程全局index的目的是让不同的线程访问不同位置的内存，但数据在内存中的排布是连续的，也就说是一维的，因此我们需要将二维的<code>ix,iy</code>转换成<code>idx</code></p>
-<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">idx = ix + iy * nx;</span><br></pre></td></tr></table></figure></div>
-
-<p>其中<code>nx</code>是矩阵中一行元素的个数。</p>
-<p>不过经过我的实验，在计算二维矩阵时把块中线程按一维安排似乎完全没有问题。</p>
+<h2 id="线程束分化"><a href="#线程束分化" class="headerlink" title="线程束分化"></a>线程束分化</h2><p>CUDA中指出C语言的控制流，这就会导致程序在不同的条件下执行不同的分支。一个线程束内由于获得的数据是不同的，可能执行到不同的逻辑分支，即“线程束分化”。然而SIMT使得每个指令周期内，线程束内的所有线程必须执行相同的指令。因此想要执行所有逻辑分支，只能花费额外的时钟周期，导致性能严重下降。</p>
+<p>避免线程束分化导致的性能下降的根本思路是避免同一个线程束内的线程产生分化。这一思路能够成功实践的条件是我们上文介绍的<code>threadId</code>的计算方法。我们可以让<code>threadId</code>相邻的32个线程执行同一个分支，来避免线程束分化。</p>
 
 		</div>
 
@@ -919,7 +923,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-07-22 16:32:58
+                    :</strong> 2025-08-04 17:55:35
             </li>
         
         <li>
@@ -1023,7 +1027,7 @@ mjx-container[display="true"] + br {
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">CUDA</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0"><span class="nav-text">CUDA编程模型概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CUDA%E7%BC%96%E7%A8%8B%E7%BB%93%E6%9E%84"><span class="nav-text">CUDA编程结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">线程管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%87%BD%E6%95%B0"><span class="nav-text">核函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8"><span class="nav-text">调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-text">错误处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%862"><span class="nav-text">线程管理2</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0"><span class="nav-text">CUDA编程模型概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CUDA%E7%BC%96%E7%A8%8B%E7%BB%93%E6%9E%84"><span class="nav-text">CUDA编程结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">线程管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%862"><span class="nav-text">线程管理2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%87%BD%E6%95%B0"><span class="nav-text">核函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8"><span class="nav-text">调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-text">错误处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%9D%9F"><span class="nav-text">线程束</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%9D%9F%E5%88%86%E5%8C%96"><span class="nav-text">线程束分化</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -1050,11 +1054,11 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        32 posts in total
+                        33 posts in total
                     </span>
                     
                         <span>
-                            84.4k words in total
+                            91.1k words in total
                         </span>
                     
                 </p>
